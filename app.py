@@ -6,12 +6,12 @@ def user_card(user_text, user_context, image_path, iframe_src, html_src):
     with col1:
         st.image(image_path, width=200)
     with col2:
-        st.markdown(f"## {user_text}")
+        st.markdown(f"#### {user_text}")
         st.write(user_context)  # Using st.write for text content
         if iframe_src:
             components.iframe(iframe_src)
         if html_src:
-            components.html(html_src, height=320, scrolling=False)
+            components.html(html_src, height=320, width=450, scrolling=False)
 
 def run():
     st.title("Shinosuke to the rescue!")
@@ -48,7 +48,7 @@ def run():
     text = "Shinosuke is muscling up! He works out hard and keeps a disciplined schedule."
     context = "Shin-chan listens to a different genre of music to get hyped up and motivate his body for extra hard work, he listens to:"
     html_src = """
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/3QyVHDclDME?si=Ir0zLb6tvxyLey4E&amp;start=28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="450" height="280" src="https://www.youtube.com/embed/3QyVHDclDME?si=Ir0zLb6tvxyLey4E&amp;start=28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         """
     image_path = "data/shinchan-square.jpg"
     
@@ -61,8 +61,8 @@ def run():
         import streamlit.components.v1 as components
         
         def run():
-            html_src = \"\"\"<iframe width="560" height="315" src="https://www.youtube.com/embed/3QyVHDclDME?si=Ir0zLb6tvxyLey4E&amp;start=28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>\"\"\"
-            components.html(html_src, height=320, scrolling=True)
+            html_src = \"\"\"<iframe width="450" height="280" src="https://www.youtube.com/embed/3QyVHDclDME?si=Ir0zLb6tvxyLey4E&amp;start=28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>\"\"\"
+            components.html(html_src, height=320, width=450, scrolling=False)
         
         if __name__ == "__main__":
             run()

@@ -14,6 +14,10 @@ def user_card(user_text, user_context, image_path, iframe_src, html_src):
             components.html(html_src, height=320, width=450, scrolling=False)
 
 def run():
+    with st.sidebar:
+        st.title("Shin-chan Lab")
+        st.markdown("![](https://www.pixenli.com/image/fm0aEpMI)", unsafe_allow_html=True)
+    
     st.title("Shinosuke to the rescue!")
     st.markdown("#### Welcome to Shinosuke's Lab, where Shin-chan demos solutions to Streamlit users in need of help!")
     st.markdown("In today's lesson, we learn how to embeed Iframes and HTML elments in Streamlit.<br> It is important to note that both of these elements are generally not advised; iframes can be used in Streamlit to embeed maps like in folium-streamlit package where Folium maps are generated as iframes since they are based of LeafletJS maps.<br>HTML elements on the other hand are tricky and may be blocked by the browser itself even if Streamlit allows it to runn so it's up to you to figure a way around it.", unsafe_allow_html=True)
